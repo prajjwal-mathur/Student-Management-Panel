@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SMS: Class🧑🏽‍🎓</title>
+  </head>
+  <body onload="get_all_class()">
+    <header>
+      <h1 class="sms-cl">Student Management System</h1>
+      <h2 class="cl-dash">Class Dashboard</h2>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Class</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#id#</td>
+            <td>I</td>
+            <td>22</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      variable = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementsByTagName("table thead tr th").innerHTML = this.responseText;
+      };
+      xhttp.open("GET", "ajax_info.txt");
+      xhttp.send();
+    </script>
+  </body>
+</html>

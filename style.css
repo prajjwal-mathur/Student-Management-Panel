@@ -1,0 +1,76 @@
+body{
+    background: #f5dec0;
+    height: 50vh;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+}
+
+.sms{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 8rem;
+}
+
+.sms-cl{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+}
+
+.cl-dash{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: 	#707d8f;
+}
+
+.menu{
+    padding-left: 7rem;
+    padding-right: 7rem;
+}
+
+li{
+    font-size: 7rem;
+    display:inline; 
+    border-color: rgba(0, 0, 0, 0.216);
+}
+
+li:hover a:hover{
+    background-color: rgba(26, 68, 68, 0.797);
+    color: white;
+}
+
+li a{
+    text-decoration: none;
+    color: 	#707d8f;
+    border-radius: 6%;
+    margin: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+.table{
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;;
+}
+
+.table thead{
+    border: 2px solid rgb(140 140 140);
+    
+}
+th,
+td {
+  border: 2px solid rgb(160 160 160);
+  padding: 8px 10px;
+  text-align: center;
+}
