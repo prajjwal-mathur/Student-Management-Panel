@@ -59,7 +59,7 @@ def token_required(func):
 
 
 @app.route('/class', methods=['GET'])
-@token_required
+# @token_required 
 def get_class():
     try:
         classes = Class.select()
