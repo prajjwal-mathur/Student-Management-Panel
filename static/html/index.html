@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/css/bootstrap5-toggle.min.css"
+      rel="stylesheet"
+    />
+    <title>SMP - log in or sign up</title>
+  </head>
+  <body class="dark-bod" id="bod">
+    <div class="toggle-dark" id="toggle-dark" onclick="turn_light();">
+      <input class="l" type="checkbox" id="checkbox" />
+    </div>
+    <div id="system">
+      <p class="smp-dark display-2" id="sms-head">
+        Student <br />
+        Management <br />Panel
+      </p>
+      <div class="auth-base-dark" id="auth-base">
+        <form id="login-form">
+          <p id="response"></p>
+          <input
+            type="username"
+            name="username"
+            id="username"
+            placeholder="Username"
+            class="username-inp"
+            required
+          />
+          <br />
+          <br />
+          <div class="password-box">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="password-inp"
+              id="password"
+              required
+              oninput="show_icon();"
+            />
+            <span class="toggle-icon" onclick="toggle_password_visibility();">
+              <img
+                width="24"
+                height="24"
+                src="https://img.icons8.com/material-rounded/24/hide.png"
+                alt="visible--v1"
+                id="icon-1"
+                hidden
+              />
+            </span>
+          </div>
+          <br />
+          <br />
+          <p id="responseMessage"></p>
+          <div class="action-btns">
+            <span id="login-span" style="cursor: not-allowed">
+              <button
+                type="button"
+                id="login-btn"
+                class="btn btn-dark"
+                onclick="authenticate_login();"
+                disabled
+              >
+                Login
+              </button>
+            </span>
+            <button
+              type="button"
+              id="signup-btn"
+              class="btn btn-primary"
+              onclick="signup_dialog();"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <dialog class="signup-dialog-dark" id="signup-dialog">
+      <button id="closeBtn" class="btn btn-danger" style="margin-left: 14em">
+        X
+      </button>
+      <p class="display-6">Sign Up</p>
+      <p class="fw-light">To get started...</p>
+      <p id="response-message-up"></p>
+      <form class="signup-form" id="signup-form">
+        <input
+          type="text"
+          placeholder="a unique username :)"
+          name="username-up"
+          id="username-up"
+        />
+        <div class="password-box">
+          <input
+            type="password"
+            name="password-up"
+            placeholder="password goes here "
+            class="password-inp"
+            id="password-up"
+            oninput="show_icon_signup();"
+          />
+          <span class="toggle-icon-2" onclick="toggle_signup_password();">
+            <img
+              width="24"
+              height="24"
+              src="https://img.icons8.com/material-rounded/24/hide.png"
+              alt="visible--v1"
+              id="icon-2"
+              hidden
+            />
+          </span>
+        </div>
+        <span id="signup-span" style="cursor: not-allowed">
+          <button
+            id="signup"
+            type="button"
+            class="btn btn-primary"
+            onclick="return signup_submit()"
+            disabled
+          >
+            Sign Up
+          </button>
+        </span>
+      </form>
+    </dialog>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/login_script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMS: Students 🧑🏽‍🎓</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="get_all_students()">
+    <h1 class="sms-cl">Student Management Panel</h1>
+    <div class="heading">
+      <p class="cl-dash">Student Details Dashboard</p>
+      <br />
+      <button
+        type="button"
+        class="btn btn-success"
+        id="add"
+        onclick="dialogBox('post')"
+      >
+        Add new student</button
+      ><br /><br />
+
+      <dialog id="addDialog">
+        <button id="closeBtn" class="btn btn-danger" style="margin-left: 14em">
+          X
+        </button>
+        <h3 id="entry-header" style="margin-left: 0.5em"></h3>
+        <form
+          id="stu-entry"
+          onsubmit="return submit_form()"
+          style="margin-left: 2em"
+        >
+          <label for="sname" id="sname-label"></label><br />
+          <input
+            type="text"
+            id="sname"
+            name="sname"
+            placeholder="Enter full name"
+            required
+          /><br />
+
+          <label for="admYear" id="admYear-label"></label><br />
+          <input
+            type="integer"
+            id="admYear"
+            name="admYear"
+            placeholder="example: 1999, 2000, 2001, ..."
+            required
+          /><br />
+
+          <label for="classNo" id="classNo-label"></label><br />
+          <!-- <input type="text" id="classNo" name="classNo" placeholder="In roman numerals only" required /><br /> -->
+          <select
+            name="classNo"
+            id="classNo"
+            style="padding-left: 30px; padding-right: 30px; text-align: center"
+            required
+          ></select
+          ><br /><br />
+          <button type="submit" class="btn btn-primary" style="margin-left: 3em;">Submit</button>
+          <p id="responseMessage"></p>
+        </form>
+      </dialog>
+    </div>
+    <dialog id="marksheet">
+      <button id="closeBtn" class="btn btn-danger" style="margin-left: 48em">
+        X
+      </button>
+      <h2
+        id="entry-header"
+        style="padding-left: 8em; padding-bottom: 1.5em"
+      ></h2>
+
+      <label id="roll-label"></label>
+      <input
+        id="roll"
+        style="margin-left: 2em; text-align: center"
+      /><br /><br />
+      <label id="sname-label"></label>
+      <input
+        id="sname"
+        style="margin-left: 4.8em; text-align: center"
+      /><br /><br />
+      <label id="admYear-label"></label>
+      <input
+        type=""
+        id="admYear"
+        style="margin-left: 0.6em; text-align: center"
+      /><br /><br />
+      <label id="classNo-label"></label>
+      <input
+        type=""
+        id="classNo"
+        style="margin-left: 4.8em; text-align: center"
+      /><br /><br />
+      <table id="marks-tab" style="padding-top: 8em">
+        <thead>
+          <th scope="col">Subject code</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Marks</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="response-message"></p>
+      <button type="submit" id="edit-btn">Edit</button>
+      <button type="submit" id="submit-btn"  onclick="update_marks()" hidden >Submit</button>
+    </dialog>
+    <div class="table-cl">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">PRN</th>
+            <th scope="col">Name</th>
+            <th scope="col">Admission Year</th>
+            <th scope="col">Class</th>
+            <th scope="col">Total Marks</th>
+            <th scope="col">Check Marks</th>
+          </tr>
+        </thead>
+        <tbody id="tableid"></tbody>
+      </table>
+    </div>
+    <div class="add-some"></div>
+
+    <script src="../js/student_script.js"></script>
+  </body>
+</html>

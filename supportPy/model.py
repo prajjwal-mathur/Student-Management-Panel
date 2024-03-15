@@ -1,5 +1,6 @@
 from peewee import Model, CharField, PrimaryKeyField, IntegerField, FloatField
-from config import db
+
+from supportPy.config import db
 
 
 class Class(Model):
@@ -42,8 +43,17 @@ class Students(Model):
         database = db
         db_table = 'students'
 
+# class StudentClass(Model):
+#     id = PrimaryKeyField()
+#     student_id = IntegerField()
+#     class_id = IntegerField()
+#
+#     class Meta:
+#         database = db
+#         db_table = 'student_class'
 
-class StudentMarks(Model):
+
+class Marks(Model):
     id = PrimaryKeyField()
     student_id = IntegerField()
     subject_id = IntegerField()
@@ -52,3 +62,12 @@ class StudentMarks(Model):
     class Meta:
         database = db
         db_table = 'student_marks'
+
+class Users(Model):
+    id = PrimaryKeyField()
+    username = CharField()
+    password = CharField()
+
+    class Meta:
+        database = db
+        db_table = 'users'

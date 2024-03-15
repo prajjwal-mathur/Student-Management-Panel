@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMS: Class🧑🏽‍🎓</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="get_all_class();">
+    <h1 class="sms-cl">Student Management Panel</h1>
+    <div class="heading">
+      <p class="cl-dash">Class Dashboard</p>
+      <button
+        type="button"
+        class="btn btn-success"
+        id="add"
+        onclick="dialogBox('post');"
+      >
+        Add a class
+      </button>
+      <dialog id="addDialog">
+        <p id="entry-header"></p>
+        <button id="closeBtn" class="btn btn-danger">X</button>
+        <form id="class-entry">
+          <label for="cname" id="cname-label">Enter a class</label><br />
+          <input
+            type="text"
+            id="cname"
+            name="cname"
+            placeholder="Roman numerals only"
+            required
+          /><br />
+
+          <label for="subjects" id="subjects-label">Select subjects</label
+          ><br />
+          <select
+            name="subjects"
+            id="subjects"
+            placeholder="Select subjects"
+            style="padding-left: 30px; padding-right: 30px; text-align: center"
+            multiple
+            required
+          ></select>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p id="responseMessage"></p>
+        </form>
+      </dialog>
+    </div>
+
+    <div class="table-cl">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Class</th>
+            <th scope="col">Subjects</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableid"></tbody>
+      </table>
+    </div>
+    <div class="add-some"></div>
+
+    <script src="../js/class_script.js"></script>
+  </body>
+</html>

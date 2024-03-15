@@ -1,6 +1,5 @@
 from pymysql import connect
-from playhouse.pool import MySQLDatabase, SqliteDatabase
-from peewee import Model
+from playhouse.pool import MySQLDatabase
 
 host = 'localhost'
 user = 'root'

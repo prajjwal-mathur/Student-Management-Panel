@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMS: Subjects 🧑🏽‍🎓</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body onload="get_all_subjects()">
+  <h1 class="sms-cl">Student Management Panel</h1>
+  <div class="heading">
+    <p class="cl-dash">Subjects Dashboard</p>
+    <button type="button" class="btn btn-success" id="add" onclick="dialogBox('post')">
+      Add a subject
+    </button>
+    <dialog id="addDialog">
+      <p id="entry-header"></p>
+      <button id="closeBtn" class="btn btn-danger">X</button>
+      <form id="sub-entry" onsubmit="return submit_form()">
+        <label for="sname" id="sname-label"></label><br />
+        <input type="text" id="sname" name="sname" placeholder="example: Hindi, English...what else?" required /><br />
+
+        <label for="pmarks" id="pmarks-label"></label><br />
+        <input type="integer" id="pmarks" name="pmarks" placeholder="Between 0 to 100" required /><br />
+
+        <label for="tmarks" id="tmarks-label"></label><br />
+        <input type="integer" id="tmarks" name="tmarks" placeholder="Between 0 to 100" required /><br />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p id="responseMessage"></p>
+      </form>
+    </dialog>
+  </div>
+
+  <div class="table-cl">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Subject name</th>
+          <th scope="col">Passing marks</th>
+          <th scope="col">Total marks</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableid"></tbody>
+    </table>
+  </div>
+  <div class="add-some"></div>
+
+  <script src="../js/subject_script.js"></script>
+</body>
+
+</html>
